@@ -1,0 +1,15 @@
+stages:
+  - code_analysis
+# this is a comment and one more comment
+code_analysis:
+  stage: code_analysis
+  image: trainingcyntexa/cyntexa-assignment-automation:v1.7
+  script:
+    - echo $CI_COMMIT_REF_NAME
+    - cd /app
+    - sed -i 's/\r//' countError.sh
+    - chmod +x countError.sh
+    - ./countError.sh
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
