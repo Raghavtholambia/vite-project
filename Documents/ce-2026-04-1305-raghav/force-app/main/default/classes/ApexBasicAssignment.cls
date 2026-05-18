@@ -1,7 +1,7 @@
 public class ApexBasicAssignment {
     public static Boolean isPalindrome(String str){
         Integer s=0, e=str.length()-1;
-       // system.debug(str.charAt(s));
+       // system.debug(str.charAt(s)) ;
         List<String> newStr=  str.split('');
         while(s<=e){
             system.debug(str.charAt(s));
